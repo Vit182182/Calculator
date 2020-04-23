@@ -178,20 +178,9 @@ namespace Calculator
                 B = Convert.ToDouble(ResultBox.Text.Replace(".", ","));
             }
         }
-        #endregion
+        #endregion       
 
-        
-
-        private bool OperationsIsClear()
-        {
-            if (Clear == true)
-            {
-                ResultBox.Clear();
-                Clear = false;
-                Dot = false;
-            }
-            return Multiply == false && Del == false && Plus == false && Minus == false;
-        }
+       
 
         #region Кнопки "=" и "C"
         private void BResult_Click(object sender, EventArgs e)
@@ -295,6 +284,26 @@ namespace Calculator
                 }
             }
 
+        }
+
+        private bool OperationsIsClear()
+        {
+            if (Clear == true)
+            {
+                ResultBox.Clear();
+                Clear = false;
+                Dot = false;
+            }
+            return Multiply == false && Del == false && Plus == false && Minus == false;
+        }
+
+        private void BRound_Click(object sender, EventArgs e)
+        {
+            SByte d = Convert.ToSByte(NumericSpecial.Value);
+            Result = Convert.ToDouble(ResultBox.Text);
+            ResultBox.Text = Convert.ToString(Math.Round(Result, d));
+            A = Convert.ToDouble(ResultBox.Text);
+            
         }
     }
 }

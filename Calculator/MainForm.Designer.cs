@@ -76,7 +76,7 @@
             this.B1.Name = "B1";
             this.B1.Padding = new System.Windows.Forms.Padding(2);
             this.B1.Size = new System.Drawing.Size(40, 40);
-            this.B1.TabIndex = 4;
+            this.B1.TabIndex = 1;
             this.B1.Text = "1";
             this.B1.UseVisualStyleBackColor = false;
             this.B1.Click += new System.EventHandler(this.B1_Click);
@@ -94,7 +94,7 @@
             0});
             this.NumericSpecial.Name = "NumericSpecial";
             this.NumericSpecial.Size = new System.Drawing.Size(86, 26);
-            this.NumericSpecial.TabIndex = 2;
+            this.NumericSpecial.TabIndex = 40;
             this.NumericSpecial.ThousandsSeparator = true;
             // 
             // B2
@@ -111,7 +111,7 @@
             this.B2.Name = "B2";
             this.B2.Padding = new System.Windows.Forms.Padding(2);
             this.B2.Size = new System.Drawing.Size(40, 40);
-            this.B2.TabIndex = 5;
+            this.B2.TabIndex = 2;
             this.B2.Text = "2";
             this.B2.UseVisualStyleBackColor = false;
             this.B2.Click += new System.EventHandler(this.B2_Click);
@@ -129,9 +129,10 @@
             this.BRound.Location = new System.Drawing.Point(32, 289);
             this.BRound.Name = "BRound";
             this.BRound.Size = new System.Drawing.Size(86, 28);
-            this.BRound.TabIndex = 9;
+            this.BRound.TabIndex = 24;
             this.BRound.Text = "~";
             this.BRound.UseVisualStyleBackColor = false;
+            this.BRound.Click += new System.EventHandler(this.BRound_Click);
             // 
             // BDel
             // 
@@ -147,7 +148,7 @@
             this.BDel.Name = "BDel";
             this.BDel.Padding = new System.Windows.Forms.Padding(2);
             this.BDel.Size = new System.Drawing.Size(40, 40);
-            this.BDel.TabIndex = 3;
+            this.BDel.TabIndex = 31;
             this.BDel.Text = "/";
             this.BDel.UseVisualStyleBackColor = false;
             this.BDel.Click += new System.EventHandler(this.BDel_Click);
@@ -166,7 +167,7 @@
             this.BResult.Name = "BResult";
             this.BResult.Padding = new System.Windows.Forms.Padding(2);
             this.BResult.Size = new System.Drawing.Size(86, 40);
-            this.BResult.TabIndex = 11;
+            this.BResult.TabIndex = 35;
             this.BResult.Text = "=";
             this.BResult.UseVisualStyleBackColor = false;
             this.BResult.Click += new System.EventHandler(this.BResult_Click);
@@ -185,7 +186,7 @@
             this.B3.Name = "B3";
             this.B3.Padding = new System.Windows.Forms.Padding(2);
             this.B3.Size = new System.Drawing.Size(40, 40);
-            this.B3.TabIndex = 6;
+            this.B3.TabIndex = 3;
             this.B3.Text = "3";
             this.B3.UseVisualStyleBackColor = false;
             this.B3.Click += new System.EventHandler(this.B3_Click);
@@ -204,7 +205,7 @@
             this.B6.Name = "B6";
             this.B6.Padding = new System.Windows.Forms.Padding(2);
             this.B6.Size = new System.Drawing.Size(40, 40);
-            this.B6.TabIndex = 10;
+            this.B6.TabIndex = 6;
             this.B6.Text = "6";
             this.B6.UseVisualStyleBackColor = false;
             this.B6.Click += new System.EventHandler(this.B6_Click);
@@ -223,7 +224,7 @@
             this.B5.Name = "B5";
             this.B5.Padding = new System.Windows.Forms.Padding(2);
             this.B5.Size = new System.Drawing.Size(40, 40);
-            this.B5.TabIndex = 9;
+            this.B5.TabIndex = 5;
             this.B5.Text = "5";
             this.B5.UseVisualStyleBackColor = false;
             this.B5.Click += new System.EventHandler(this.B5_Click);
@@ -242,7 +243,7 @@
             this.B4.Name = "B4";
             this.B4.Padding = new System.Windows.Forms.Padding(2);
             this.B4.Size = new System.Drawing.Size(40, 40);
-            this.B4.TabIndex = 8;
+            this.B4.TabIndex = 4;
             this.B4.Text = "4";
             this.B4.UseVisualStyleBackColor = false;
             this.B4.Click += new System.EventHandler(this.B4_Click);
@@ -261,7 +262,7 @@
             this.B9.Name = "B9";
             this.B9.Padding = new System.Windows.Forms.Padding(2);
             this.B9.Size = new System.Drawing.Size(40, 40);
-            this.B9.TabIndex = 18;
+            this.B9.TabIndex = 9;
             this.B9.Text = "9";
             this.B9.UseVisualStyleBackColor = false;
             this.B9.Click += new System.EventHandler(this.B9_Click);
@@ -280,7 +281,7 @@
             this.B8.Name = "B8";
             this.B8.Padding = new System.Windows.Forms.Padding(2);
             this.B8.Size = new System.Drawing.Size(40, 40);
-            this.B8.TabIndex = 17;
+            this.B8.TabIndex = 8;
             this.B8.Text = "8";
             this.B8.UseVisualStyleBackColor = false;
             this.B8.Click += new System.EventHandler(this.B8_Click);
@@ -299,7 +300,7 @@
             this.B7.Name = "B7";
             this.B7.Padding = new System.Windows.Forms.Padding(2);
             this.B7.Size = new System.Drawing.Size(40, 40);
-            this.B7.TabIndex = 16;
+            this.B7.TabIndex = 7;
             this.B7.Text = "7";
             this.B7.UseVisualStyleBackColor = false;
             this.B7.Click += new System.EventHandler(this.B7_Click);
@@ -318,7 +319,7 @@
             this.BDot.Name = "BDot";
             this.BDot.Padding = new System.Windows.Forms.Padding(2);
             this.BDot.Size = new System.Drawing.Size(40, 40);
-            this.BDot.TabIndex = 21;
+            this.BDot.TabIndex = 23;
             this.BDot.Text = ",";
             this.BDot.UseVisualStyleBackColor = false;
             this.BDot.Click += new System.EventHandler(this.BDot_Click);
@@ -337,7 +338,7 @@
             this.B0.Name = "B0";
             this.B0.Padding = new System.Windows.Forms.Padding(2);
             this.B0.Size = new System.Drawing.Size(40, 40);
-            this.B0.TabIndex = 20;
+            this.B0.TabIndex = 10;
             this.B0.Text = "0";
             this.B0.UseVisualStyleBackColor = false;
             this.B0.Click += new System.EventHandler(this.B0_Click);
@@ -356,7 +357,7 @@
             this.BC.Name = "BC";
             this.BC.Padding = new System.Windows.Forms.Padding(2);
             this.BC.Size = new System.Drawing.Size(40, 40);
-            this.BC.TabIndex = 1;
+            this.BC.TabIndex = 21;
             this.BC.Text = "C";
             this.BC.UseVisualStyleBackColor = false;
             this.BC.Click += new System.EventHandler(this.BC_Click);
@@ -375,7 +376,7 @@
             this.BBackSpace.Name = "BBackSpace";
             this.BBackSpace.Padding = new System.Windows.Forms.Padding(2);
             this.BBackSpace.Size = new System.Drawing.Size(86, 40);
-            this.BBackSpace.TabIndex = 2;
+            this.BBackSpace.TabIndex = 22;
             this.BBackSpace.Text = "<-";
             this.BBackSpace.UseVisualStyleBackColor = false;
             // 
@@ -393,7 +394,7 @@
             this.BPlus.Name = "BPlus";
             this.BPlus.Padding = new System.Windows.Forms.Padding(2);
             this.BPlus.Size = new System.Drawing.Size(40, 40);
-            this.BPlus.TabIndex = 24;
+            this.BPlus.TabIndex = 34;
             this.BPlus.Text = "+";
             this.BPlus.UseVisualStyleBackColor = false;
             this.BPlus.Click += new System.EventHandler(this.BPlus_Click);
@@ -412,7 +413,7 @@
             this.BMinus.Name = "BMinus";
             this.BMinus.Padding = new System.Windows.Forms.Padding(2);
             this.BMinus.Size = new System.Drawing.Size(40, 40);
-            this.BMinus.TabIndex = 11;
+            this.BMinus.TabIndex = 33;
             this.BMinus.Text = "-";
             this.BMinus.UseVisualStyleBackColor = false;
             this.BMinus.Click += new System.EventHandler(this.BMinus_Click);
@@ -431,7 +432,7 @@
             this.BMultiply.Name = "BMultiply";
             this.BMultiply.Padding = new System.Windows.Forms.Padding(2);
             this.BMultiply.Size = new System.Drawing.Size(40, 40);
-            this.BMultiply.TabIndex = 7;
+            this.BMultiply.TabIndex = 32;
             this.BMultiply.Text = "*";
             this.BMultiply.UseVisualStyleBackColor = false;
             this.BMultiply.Click += new System.EventHandler(this.BMultiply_Click);
@@ -441,7 +442,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(251, 364);
+            this.ClientSize = new System.Drawing.Size(242, 364);
             this.Controls.Add(this.BBackSpace);
             this.Controls.Add(this.BPlus);
             this.Controls.Add(this.BMinus);

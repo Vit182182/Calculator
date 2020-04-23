@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ResultBox = new System.Windows.Forms.TextBox();
             this.B1 = new System.Windows.Forms.Button();
-            this.NumericSpecial = new System.Windows.Forms.NumericUpDown();
             this.B2 = new System.Windows.Forms.Button();
             this.BRound = new System.Windows.Forms.Button();
             this.BDel = new System.Windows.Forms.Button();
@@ -46,25 +45,25 @@
             this.BDot = new System.Windows.Forms.Button();
             this.B0 = new System.Windows.Forms.Button();
             this.BC = new System.Windows.Forms.Button();
-            this.BBackSpace = new System.Windows.Forms.Button();
+            this.BSqrt = new System.Windows.Forms.Button();
             this.BPlus = new System.Windows.Forms.Button();
             this.BMinus = new System.Windows.Forms.Button();
             this.BMultiply = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericSpecial)).BeginInit();
+            this.OperationBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // ResultBox
             // 
-            this.ResultBox.Location = new System.Drawing.Point(32, 12);
+            this.ResultBox.Location = new System.Drawing.Point(78, 12);
             this.ResultBox.Name = "ResultBox";
             this.ResultBox.ReadOnly = true;
-            this.ResultBox.Size = new System.Drawing.Size(178, 26);
+            this.ResultBox.Size = new System.Drawing.Size(132, 26);
             this.ResultBox.TabIndex = 0;
+            this.ResultBox.Text = "0";
             this.ResultBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // B1
             // 
-            this.B1.AutoEllipsis = true;
             this.B1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.B1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.B1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -81,25 +80,8 @@
             this.B1.UseVisualStyleBackColor = false;
             this.B1.Click += new System.EventHandler(this.B1_Click);
             // 
-            // NumericSpecial
-            // 
-            this.NumericSpecial.AutoSize = true;
-            this.NumericSpecial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NumericSpecial.Hexadecimal = true;
-            this.NumericSpecial.Location = new System.Drawing.Point(124, 291);
-            this.NumericSpecial.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.NumericSpecial.Name = "NumericSpecial";
-            this.NumericSpecial.Size = new System.Drawing.Size(86, 26);
-            this.NumericSpecial.TabIndex = 40;
-            this.NumericSpecial.ThousandsSeparator = true;
-            // 
             // B2
             // 
-            this.B2.AutoEllipsis = true;
             this.B2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.B2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.B2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -118,26 +100,27 @@
             // 
             // BRound
             // 
-            this.BRound.AutoEllipsis = true;
-            this.BRound.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BRound.AccessibleName = "";
+            this.BRound.BackColor = System.Drawing.SystemColors.Info;
             this.BRound.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BRound.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BRound.FlatAppearance.BorderSize = 3;
             this.BRound.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
             this.BRound.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OliveDrab;
             this.BRound.Font = new System.Drawing.Font("Segoe Script", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BRound.Location = new System.Drawing.Point(32, 289);
+            this.BRound.Location = new System.Drawing.Point(32, 291);
             this.BRound.Name = "BRound";
-            this.BRound.Size = new System.Drawing.Size(86, 28);
+            this.BRound.Size = new System.Drawing.Size(178, 40);
             this.BRound.TabIndex = 24;
             this.BRound.Text = "~";
             this.BRound.UseVisualStyleBackColor = false;
             this.BRound.Click += new System.EventHandler(this.BRound_Click);
+            this.BRound.MouseLeave += new System.EventHandler(this.LeaveBRound);
+            this.BRound.MouseHover += new System.EventHandler(this.AboutBRound);
             // 
             // BDel
             // 
-            this.BDel.AutoEllipsis = true;
-            this.BDel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BDel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BDel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BDel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BDel.FlatAppearance.BorderSize = 3;
@@ -155,8 +138,7 @@
             // 
             // BResult
             // 
-            this.BResult.AutoEllipsis = true;
-            this.BResult.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BResult.BackColor = System.Drawing.SystemColors.Info;
             this.BResult.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BResult.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BResult.FlatAppearance.BorderSize = 3;
@@ -174,7 +156,6 @@
             // 
             // B3
             // 
-            this.B3.AutoEllipsis = true;
             this.B3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.B3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.B3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -193,7 +174,6 @@
             // 
             // B6
             // 
-            this.B6.AutoEllipsis = true;
             this.B6.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.B6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.B6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -212,7 +192,6 @@
             // 
             // B5
             // 
-            this.B5.AutoEllipsis = true;
             this.B5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.B5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.B5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -231,7 +210,6 @@
             // 
             // B4
             // 
-            this.B4.AutoEllipsis = true;
             this.B4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.B4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.B4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -250,7 +228,6 @@
             // 
             // B9
             // 
-            this.B9.AutoEllipsis = true;
             this.B9.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.B9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.B9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -269,7 +246,6 @@
             // 
             // B8
             // 
-            this.B8.AutoEllipsis = true;
             this.B8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.B8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.B8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -288,7 +264,6 @@
             // 
             // B7
             // 
-            this.B7.AutoEllipsis = true;
             this.B7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.B7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.B7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -307,7 +282,6 @@
             // 
             // BDot
             // 
-            this.BDot.AutoEllipsis = true;
             this.BDot.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.BDot.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BDot.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -326,7 +300,6 @@
             // 
             // B0
             // 
-            this.B0.AutoEllipsis = true;
             this.B0.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.B0.Cursor = System.Windows.Forms.Cursors.Hand;
             this.B0.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -345,8 +318,7 @@
             // 
             // BC
             // 
-            this.BC.AutoEllipsis = true;
-            this.BC.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BC.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BC.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BC.FlatAppearance.BorderSize = 3;
@@ -356,34 +328,34 @@
             this.BC.Location = new System.Drawing.Point(32, 61);
             this.BC.Name = "BC";
             this.BC.Padding = new System.Windows.Forms.Padding(2);
-            this.BC.Size = new System.Drawing.Size(40, 40);
+            this.BC.Size = new System.Drawing.Size(86, 40);
             this.BC.TabIndex = 21;
             this.BC.Text = "C";
             this.BC.UseVisualStyleBackColor = false;
             this.BC.Click += new System.EventHandler(this.BC_Click);
             // 
-            // BBackSpace
+            // BSqrt
             // 
-            this.BBackSpace.AutoEllipsis = true;
-            this.BBackSpace.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.BBackSpace.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BBackSpace.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BBackSpace.FlatAppearance.BorderSize = 3;
-            this.BBackSpace.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
-            this.BBackSpace.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OliveDrab;
-            this.BBackSpace.Font = new System.Drawing.Font("Segoe Script", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BBackSpace.Location = new System.Drawing.Point(78, 61);
-            this.BBackSpace.Name = "BBackSpace";
-            this.BBackSpace.Padding = new System.Windows.Forms.Padding(2);
-            this.BBackSpace.Size = new System.Drawing.Size(86, 40);
-            this.BBackSpace.TabIndex = 22;
-            this.BBackSpace.Text = "<-";
-            this.BBackSpace.UseVisualStyleBackColor = false;
+            this.BSqrt.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BSqrt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BSqrt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BSqrt.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BSqrt.FlatAppearance.BorderSize = 3;
+            this.BSqrt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
+            this.BSqrt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OliveDrab;
+            this.BSqrt.Font = new System.Drawing.Font("Segoe Script", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BSqrt.Image = ((System.Drawing.Image)(resources.GetObject("BSqrt.Image")));
+            this.BSqrt.Location = new System.Drawing.Point(124, 61);
+            this.BSqrt.Name = "BSqrt";
+            this.BSqrt.Padding = new System.Windows.Forms.Padding(2);
+            this.BSqrt.Size = new System.Drawing.Size(40, 40);
+            this.BSqrt.TabIndex = 22;
+            this.BSqrt.UseVisualStyleBackColor = false;
+            this.BSqrt.Click += new System.EventHandler(this.BSqrt_Click);
             // 
             // BPlus
             // 
-            this.BPlus.AutoEllipsis = true;
-            this.BPlus.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BPlus.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BPlus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BPlus.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BPlus.FlatAppearance.BorderSize = 3;
@@ -401,8 +373,7 @@
             // 
             // BMinus
             // 
-            this.BMinus.AutoEllipsis = true;
-            this.BMinus.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BMinus.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BMinus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BMinus.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BMinus.FlatAppearance.BorderSize = 3;
@@ -420,8 +391,7 @@
             // 
             // BMultiply
             // 
-            this.BMultiply.AutoEllipsis = true;
-            this.BMultiply.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BMultiply.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BMultiply.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BMultiply.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BMultiply.FlatAppearance.BorderSize = 3;
@@ -437,13 +407,23 @@
             this.BMultiply.UseVisualStyleBackColor = false;
             this.BMultiply.Click += new System.EventHandler(this.BMultiply_Click);
             // 
+            // OperationBox
+            // 
+            this.OperationBox.Location = new System.Drawing.Point(32, 12);
+            this.OperationBox.Name = "OperationBox";
+            this.OperationBox.ReadOnly = true;
+            this.OperationBox.Size = new System.Drawing.Size(40, 26);
+            this.OperationBox.TabIndex = 36;
+            this.OperationBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(242, 364);
-            this.Controls.Add(this.BBackSpace);
+            this.Controls.Add(this.OperationBox);
+            this.Controls.Add(this.BSqrt);
             this.Controls.Add(this.BPlus);
             this.Controls.Add(this.BMinus);
             this.Controls.Add(this.BMultiply);
@@ -461,7 +441,6 @@
             this.Controls.Add(this.BDel);
             this.Controls.Add(this.BRound);
             this.Controls.Add(this.B2);
-            this.Controls.Add(this.NumericSpecial);
             this.Controls.Add(this.B1);
             this.Controls.Add(this.ResultBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -469,7 +448,6 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Простой калькулятор(C#)";
-            ((System.ComponentModel.ISupportInitialize)(this.NumericSpecial)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -479,7 +457,6 @@
 
         private System.Windows.Forms.TextBox ResultBox;
         private System.Windows.Forms.Button B1;
-        private System.Windows.Forms.NumericUpDown NumericSpecial;
         private System.Windows.Forms.Button B2;
         private System.Windows.Forms.Button BRound;
         private System.Windows.Forms.Button BDel;
@@ -494,10 +471,11 @@
         private System.Windows.Forms.Button BDot;
         private System.Windows.Forms.Button B0;
         private System.Windows.Forms.Button BC;
-        private System.Windows.Forms.Button BBackSpace;
+        private System.Windows.Forms.Button BSqrt;
         private System.Windows.Forms.Button BPlus;
         private System.Windows.Forms.Button BMinus;
         private System.Windows.Forms.Button BMultiply;
+        private System.Windows.Forms.TextBox OperationBox;
     }
 }
 

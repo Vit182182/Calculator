@@ -118,6 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="BSqrt.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAACQSURBVFhH7ZJBCsAgDAT9/4OFnCx7EFqNbZpEVMhhDi4k
+        O4qJiMpKzhLIObM5SCmJ6ObaQANXNKKbbQMNo+USzAKWchACLgJcLsUkYL09CAG1gEc5CAGVgFc52EOg
+        LnzjMcRkWj5fYCRwP1v4LcAJWRD9gS0EaulSAe9yEAIiATCjHJwlwOVWxAKzCIHFAlQuBLyoAnNpZ+wA
+        AAAASUVORK5CYII=
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEASEgAAAEAIACIVAAAFgAAACgAAABIAAAAkAAAAAEAIAAAAAAAYFQAAAAAAAAAAAAAAAAAAAAA

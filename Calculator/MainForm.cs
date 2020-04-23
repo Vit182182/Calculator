@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Calculator
@@ -16,12 +9,12 @@ namespace Calculator
         Boolean Del = false;
         Boolean Plus = false;
         Boolean Minus = false;
-        Boolean Clear = false;
+        Boolean Clear = true;
         Double A;
         Double B;
         Double Result;
         Boolean Dot = false;
-
+        public static int MouseHoverTime { get; } = 200;//Врем появления подсказки(мс)
 
         public MainForm()
         {
@@ -178,13 +171,12 @@ namespace Calculator
                 B = Convert.ToDouble(ResultBox.Text.Replace(".", ","));
             }
         }
-        #endregion       
-
-       
+        #endregion              
 
         #region Кнопки "=" и "C"
         private void BResult_Click(object sender, EventArgs e)
         {
+            OperationBox.Clear();
             if (Multiply == true)
                 Result = A * B;
 
@@ -209,7 +201,8 @@ namespace Calculator
 
         private void BC_Click(object sender, EventArgs e)
         {
-            ResultBox.Clear();
+            OperationBox.Clear();
+            ResultBox.Text = "0";
             Multiply = false;
             Del = false;
             Plus = false;
@@ -223,8 +216,10 @@ namespace Calculator
 
         #endregion
 
+        #region Кнопки операций +, -, *, /
         private void BDel_Click(object sender, EventArgs e)
         {
+            OperationBox.Text = "/";
             Multiply = false;
             Del = true;
             Plus = false;
@@ -236,6 +231,7 @@ namespace Calculator
 
         private void BMultiply_Click(object sender, EventArgs e)
         {
+            OperationBox.Text = "*";
             Multiply = true;
             Del = false;
             Plus = false;
@@ -246,6 +242,7 @@ namespace Calculator
 
         private void BMinus_Click(object sender, EventArgs e)
         {
+            OperationBox.Text = "-";             
             Multiply = false;
             Del = false;
             Plus = false;
@@ -256,6 +253,7 @@ namespace Calculator
 
         private void BPlus_Click(object sender, EventArgs e)
         {
+            OperationBox.Text = "+";
             Multiply = false;
             Del = false;
             Plus = true;
@@ -264,6 +262,9 @@ namespace Calculator
             ResultBox.Clear();
         }
 
+        #endregion
+
+        //Запятая
         private void BDot_Click(object sender, EventArgs e)
         {
             if (OperationsIsClear())
@@ -285,25 +286,47 @@ namespace Calculator
             }
 
         }
+        //Квадратный корень
+        private void BSqrt_Click(object sender, EventArgs e)
+        {
+            OperationBox.Text = "sqrt";
+            Result = Convert.ToDouble(ResultBox.Text);
+            ResultBox.Text = Convert.ToString(Math.Sqrt(Result));
+            A = Convert.ToDouble(ResultBox.Text);
+        }
 
+        //Округление
+        private void BRound_Click(object sender, EventArgs e)
+        {
+            Result = Convert.ToDouble(ResultBox.Text);
+            ResultBox.Text = Convert.ToString(Math.Round(Result));
+            A = Convert.ToDouble(ResultBox.Text);
+            
+        }
+
+        //Событие задержки мыши над кнопкой "~"       
+        private void AboutBRound(object sender, EventArgs e)
+        {
+            BRound.Text = "Округлить";
+        }
+
+        //Событие ухода мыши с кнопки "~"    
+        private void LeaveBRound(object sender, EventArgs e)
+        {
+            BRound.Text = "~";
+        }        
+
+        //Вспомогательная функция
         private bool OperationsIsClear()
         {
             if (Clear == true)
             {
+                OperationBox.Clear();
                 ResultBox.Clear();
                 Clear = false;
                 Dot = false;
             }
             return Multiply == false && Del == false && Plus == false && Minus == false;
-        }
-
-        private void BRound_Click(object sender, EventArgs e)
-        {
-            SByte d = Convert.ToSByte(NumericSpecial.Value);
-            Result = Convert.ToDouble(ResultBox.Text);
-            ResultBox.Text = Convert.ToString(Math.Round(Result, d));
-            A = Convert.ToDouble(ResultBox.Text);
-            
         }
     }
 }
